@@ -3,7 +3,10 @@ type str {
 }
 
 type std::fs::File {
-    #layout(size = 8, align = 8);
+    #layout(size = 4, align = 4);
+    // Or on Windows
+    // #layout(size = 8, align = 8);
+
     fn open(&str) -> std::io::Result<std::fs::File>;
 }
 
