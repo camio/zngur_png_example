@@ -1,0 +1,30 @@
+type str {
+    wellknown_traits(?Sized);
+}
+
+type std::fs::File {
+    #layout(size = 8, align = 8);
+    fn open(&str) -> std::io::Result<std::fs::File>;
+}
+
+type std::io::Result<std::fs::File> {
+    #layout(size = 16, align = 8);
+    fn unwrap(self) -> std::fs::File;
+}
+
+type png::Decoder<std::fs::File> {
+    #layout(size = 656, align = 8);
+    fn new(std::fs::File) -> png::Decoder<std::fs::File>;
+    fn read_header_info(&mut self) -> core::result::Result<&png::Info, png::DecodingError>;
+}
+
+type core::result::Result<&png::Info, png::DecodingError> {
+    #layout(size = 32, align = 8);
+    fn unwrap(self) -> &png::Info;
+}
+
+type png::Info {
+    #layout(size = 432, align = 8);
+    fn width(&self) -> u32;
+    fn height(&self) -> u32;
+}
