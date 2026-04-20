@@ -3,3 +3,5 @@
 /src/generated.rs
 /a.out
 /Cargo.lock
+/a.exe
+/generated.cpp
