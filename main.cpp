@@ -9,5 +9,5 @@ int main() {
 
   auto header_info = decoder.read_header_info().unwrap();
   std::cout << "Width = " << header_info.width << std::endl;
-  std::cout << "height = " << header_info.height << std::endl;
+  std::cout << "Height = " << header_info.height << std::endl;
 }
