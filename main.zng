@@ -3,9 +3,9 @@ type str {
 }
 
 type std::fs::File {
-    #layout(size = 4, align = 4);
+    // #layout(size = 4, align = 4);
     // Or on Windows
-    // #layout(size = 8, align = 8);
+    #layout(size = 8, align = 8);
 
     fn open(&str) -> std::io::Result<std::fs::File>;
 }
@@ -28,6 +28,6 @@ type core::result::Result<&png::Info, png::DecodingError> {
 
 type png::Info {
     #layout(size = 432, align = 8);
-    fn width(&self) -> u32;
-    fn height(&self) -> u32;
+    field width (offset = 416, type = u32);
+    field height (offset = 420, type = u32);
 }
